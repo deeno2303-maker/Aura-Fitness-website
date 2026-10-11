@@ -1,0 +1,243 @@
+/* Aura Fitness — standalone Material Design 3 stylesheet */
+:root {
+  --background: oklch(0.988 0.002 247);
+  --foreground: oklch(0.235 0.012 260);
+  --card: oklch(1 0 0);
+  --primary: oklch(0.546 0.215 262);
+  --primary-bright: oklch(0.623 0.214 259);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.934 0.009 255);
+  --muted: oklch(0.966 0.005 250);
+  --muted-foreground: oklch(0.485 0.022 258);
+  --accent: oklch(0.76 0.13 155);
+  --border: oklch(0.885 0.013 250);
+  --destructive: oklch(0.55 0.21 25);
+  --hero-foreground: oklch(1 0 0);
+  --hero-muted: oklch(0.9 0.006 250);
+  --hero-scrim: oklch(0.16 0.004 250);
+  --class-strength: var(--primary);
+  --class-conditioning: oklch(0.54 0.13 45);
+  --class-mobility: oklch(0.45 0.105 162);
+  --md-sys-color-primary: var(--primary);
+  --md-sys-color-on-primary: var(--primary-foreground);
+  --md-sys-color-primary-container: oklch(0.94 0.026 255);
+  --md-sys-color-on-primary-container: oklch(0.32 0.12 260);
+  --md-sys-color-secondary: var(--class-conditioning);
+  --md-sys-color-on-secondary: var(--primary-foreground);
+  --md-sys-color-secondary-container: var(--secondary);
+  --md-sys-color-on-secondary-container: var(--foreground);
+  --md-sys-color-tertiary: var(--class-mobility);
+  --md-sys-color-on-tertiary: var(--primary-foreground);
+  --md-sys-color-tertiary-container: oklch(0.94 0.025 160);
+  --md-sys-color-on-tertiary-container: var(--class-mobility);
+  --md-sys-color-error: var(--destructive);
+  --md-sys-color-on-error: var(--primary-foreground);
+  --md-sys-color-background: var(--background);
+  --md-sys-color-on-background: var(--foreground);
+  --md-sys-color-surface: var(--background);
+  --md-sys-color-on-surface: var(--foreground);
+  --md-sys-color-surface-variant: var(--secondary);
+  --md-sys-color-on-surface-variant: var(--muted-foreground);
+  --md-sys-color-outline: var(--muted-foreground);
+  --md-sys-color-outline-variant: var(--border);
+  --md-sys-color-surface-container-lowest: var(--card);
+  --md-sys-color-surface-container-low: var(--background);
+  --md-sys-color-surface-container: var(--muted);
+  --md-sys-color-surface-container-high: var(--secondary);
+  --md-sys-color-surface-container-highest: var(--border);
+  --md-sys-color-inverse-surface: var(--foreground);
+  --md-sys-color-inverse-on-surface: var(--background);
+  --md-ref-typeface-brand: "Bebas Neue", sans-serif;
+  --md-ref-typeface-plain: "Barlow", sans-serif;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 24px;
+  --md-sys-elevation-level1: 0 2px 6px color-mix(in oklab, var(--foreground) 5%, transparent);
+  --md-sys-elevation-level2: 0 8px 24px color-mix(in oklab, var(--foreground) 8%, transparent);
+  --md-sys-elevation-level3: 0 16px 40px color-mix(in oklab, var(--primary) 12%, transparent);
+}
+.dark {
+  --background: oklch(0.19 0.008 260);
+  --foreground: oklch(0.95 0.003 250);
+  --card: oklch(0.23 0.009 260);
+  --muted: oklch(0.25 0.01 260);
+  --secondary: oklch(0.29 0.014 255);
+  --muted-foreground: oklch(0.77 0.018 250);
+  --border: oklch(0.36 0.018 250);
+  --primary: oklch(0.75 0.12 255);
+  --primary-foreground: oklch(0.2 0.04 255);
+  --class-conditioning: oklch(0.78 0.11 55);
+  --class-mobility: oklch(0.75 0.11 162);
+  --md-sys-color-primary-container: oklch(0.32 0.08 255);
+  --md-sys-color-on-primary-container: oklch(0.92 0.03 255);
+}
+
+/* Foundation */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: "Barlow", sans-serif; line-height: 1.6; }
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+a { color: inherit; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { font-family: "Bebas Neue", sans-serif; font-weight: 400; line-height: 1; letter-spacing: 0; }
+.container { width: min(100% - 5rem, 76rem); margin-inline: auto; }
+.aura-site { min-height: 100vh; overflow-x: clip; }
+:focus-visible { outline: 3px solid var(--primary-bright); outline-offset: 5px; }
+.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; transform: translateY(-180%); padding: 1rem; background: var(--primary); color: var(--primary-foreground); border-radius: 8px; }
+.skip-link:focus { transform: none; }
+md-icon { font-family: "Material Symbols Rounded"; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; letter-spacing: 0; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: "liga"; -webkit-font-smoothing: antialiased; }
+md-filled-button, md-outlined-button, md-text-button { --md-sys-typescale-label-large-font: "Barlow", sans-serif; --md-sys-typescale-label-large-weight: 600; --md-sys-typescale-label-large-tracking: 0; --md-filled-button-container-height: 48px; --md-outlined-button-container-height: 48px; --md-filled-button-container-shape: 8px; --md-outlined-button-container-shape: 8px; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding-inline: 20px; font: 600 15px "Barlow", sans-serif; text-decoration: none; }
+md-filled-button:not(:defined), md-outlined-button:not(:defined) { padding: 12px 24px; border-radius: 8px; gap: 8px; }
+md-filled-button:not(:defined) { background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); }
+md-outlined-button:not(:defined) { border: 1px solid var(--md-sys-color-outline); color: var(--md-sys-color-primary); }
+
+/* Navigation */
+.site-header { position: sticky; top: 0; z-index: 50; background: color-mix(in oklab, var(--background) 94%, transparent); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.nav { display: grid; grid-template-columns: minmax(0,1fr) auto auto; gap: 2rem; align-items: center; min-height: 84px; }
+.logo { display: inline-flex; align-items: center; gap: 10px; min-width: 0; width: fit-content; text-decoration: none; }
+.logo > span:last-child { font: 32px/1 "Bebas Neue", sans-serif; display: flex; gap: 5px; }
+.logo strong { color: var(--primary); font-weight: 400; }
+.logo-mark { display: grid; place-items: center; width: 35px; height: 39px; font: 44px/1 "Bebas Neue", sans-serif; color: var(--primary); transform: skew(-9deg); }
+.nav-links { display: flex; gap: 6px; }
+.nav-links a { position: relative; overflow: hidden; padding: 12px 16px; border-radius: 24px; text-decoration: none; font-size: 14px; font-weight: 600; color: var(--muted-foreground); }
+.nav-links a:hover { background: var(--muted); color: var(--primary); }
+
+/* Full-bleed studio cover */
+.hero { position: relative; isolation: isolate; display: grid; align-items: center; min-height: min(660px, calc(100svh - 145px)); background: var(--hero-scrim); color: var(--hero-foreground); overflow: hidden; }
+.hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -2; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, color-mix(in oklab, var(--hero-scrim) 78%, transparent), color-mix(in oklab, var(--hero-scrim) 26%, transparent) 62%, transparent); }
+.hero-inner { padding-block: 52px 60px; }
+.eyebrow, .section-kicker { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0; }
+.eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--hero-muted); }
+.eyebrow::before { content: ""; width: 20px; height: 2px; background: var(--primary-bright); }
+.hero h1 { font-size: 88px; margin-bottom: 20px; }
+.hero-tagline { display: block; font-size: 42px; margin-top: 12px; color: var(--hero-muted); }
+.hero-sub { max-width: 460px; font-size: 16px; color: var(--hero-muted); line-height: 1.75; margin-bottom: 26px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; --md-sys-color-primary: var(--primary-bright); --md-sys-color-on-primary: var(--hero-foreground); }
+.hero-actions md-outlined-button { --md-sys-color-primary: var(--hero-foreground); --md-sys-color-outline: color-mix(in oklab, var(--hero-foreground) 60%, transparent); }
+
+/* Training grid */
+.disciplines { border-bottom: 1px solid var(--border); background: var(--card); }
+.discipline-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+.discipline { --discipline-color: var(--class-strength); display: grid; grid-template-columns: auto minmax(0,1fr) auto; gap: 20px; align-items: center; position: relative; overflow: hidden; padding: 30px 24px; text-decoration: none; border-right: 1px solid var(--border); }
+.discipline:first-child { padding-left: 0; }
+.discipline:last-child { border: 0; padding-right: 0; }
+.discipline-conditioning { --discipline-color: var(--class-conditioning); }
+.discipline-mobility { --discipline-color: var(--class-mobility); }
+.discipline > md-icon:first-child { font-size: 32px; color: var(--discipline-color); width: 32px; height: 32px; }
+.discipline small { display: block; color: var(--muted-foreground); font-size: 10px; text-transform: uppercase; }
+.discipline strong { display: block; font: 30px/1.2 "Bebas Neue", sans-serif; }
+.discipline-arrow { color: var(--muted-foreground); font-size: 20px; }
+
+/* Section hierarchy and schedule */
+.section { padding-block: 88px; }
+.section-alt { background: var(--muted); }
+.section-heading { position: relative; margin-bottom: 36px; }
+.section-kicker { margin-bottom: 12px; color: var(--primary); }
+.section-heading h2, .contact-inner h2 { font-size: 56px; margin-bottom: 12px; }
+.section-sub { color: var(--muted-foreground); margin-bottom: 0; font-size: 16px; }
+.schedule-grid { display: grid; grid-template-columns: 80px repeat(6,minmax(0,1fr)); border-top: 1px solid var(--border); }
+.schedule-head, .schedule-row { display: contents; }
+.schedule-grid span { display: flex; align-items: center; min-width: 0; min-height: 78px; padding: 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
+.schedule-head span { min-height: 48px; color: var(--muted-foreground); font-size: 11px; text-transform: uppercase; font-weight: 600; }
+.schedule-grid .time { font-weight: 600; }
+.schedule-grid .cls { position: relative; padding-left: 21px; }
+.schedule-grid .cls::before { content: ""; position: absolute; left: 10px; width: 3px; height: 22px; border-radius: 2px; }
+.cls-strength::before { background: var(--class-strength); }
+.cls-conditioning::before { background: var(--class-conditioning); }
+.cls-mobility::before { background: var(--class-mobility); }
+.cls-empty { color: var(--muted-foreground); }
+
+/* Coach profiles */
+.trainer-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; }
+.trainer-card { --trainer-tone: var(--class-strength); min-width: 0; border-top: 1px solid var(--border); padding-top: 28px; }
+.trainer-conditioning { --trainer-tone: var(--class-conditioning); }
+.trainer-mobility { --trainer-tone: var(--class-mobility); }
+.avatar { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%; color: var(--trainer-tone); background: color-mix(in oklab, var(--trainer-tone) 9%, var(--card)); font: 28px/1 "Bebas Neue", sans-serif; margin-bottom: 24px; }
+.trainer-copy h3 { font-size: 19px; line-height: 1.3; font-weight: 600; margin-bottom: 8px; }
+.trainer-copy .role { color: var(--trainer-tone); font-size: 12px; font-weight: 600; margin-bottom: 16px; }
+.trainer-copy p { color: var(--muted-foreground); font-size: 14px; line-height: 1.8; margin-bottom: 0; }
+
+/* Membership comparison */
+.pricing-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.price-card { position: relative; display: flex; flex-direction: column; padding: 32px; border: 1px solid var(--border); border-radius: var(--md-sys-shape-corner-small); background: var(--card); box-shadow: var(--md-sys-elevation-level1); }
+.price-card-featured { border: 2px solid var(--primary); background: var(--md-sys-color-primary-container); box-shadow: var(--md-sys-elevation-level3); }
+.price-card h3 { font: 30px/1 "Bebas Neue", sans-serif; margin-bottom: 20px; }
+.badge { position: absolute; top: -13px; right: 20px; margin: 0; padding: 4px 12px; border-radius: 20px; background: var(--primary); color: var(--primary-foreground); font-size: 11px; font-weight: 600; }
+.price { font: 56px/1 "Bebas Neue", sans-serif; margin-bottom: 28px; }
+.price span { font: 14px "Barlow", sans-serif; color: var(--muted-foreground); margin-left: 6px; }
+.price-card ul { flex: 1; display: grid; align-content: start; gap: 14px; margin: 0 0 32px; padding: 24px 0 0; list-style: none; border-top: 1px solid var(--border); }
+.price-card li { display: grid; grid-template-columns: 20px minmax(0,1fr); gap: 8px; font-size: 14px; color: var(--muted-foreground); }
+.price-card li md-icon { color: var(--primary); font-size: 18px; }
+.price-card md-filled-button, .price-card md-outlined-button { width: 100%; }
+
+/* Trial and footer */
+.contact-section { background: var(--secondary); padding-block: 72px; }
+.contact-inner { text-align: center; }
+.contact-icon { color: var(--primary); margin-bottom: 20px; }
+.contact-icon md-icon { font-size: 36px; width: 36px; height: 36px; }
+.contact-inner p { color: var(--muted-foreground); margin-bottom: 8px; }
+.contact-inner p:first-of-type { font-size: 20px; color: var(--foreground); }
+.contact-inner a { text-underline-offset: 4px; }
+.contact-inner md-filled-button { margin-top: 24px; }
+.site-footer { border-top: 1px solid var(--border); padding-block: 32px; }
+.footer-inner { display: grid; grid-template-columns: auto minmax(0,1fr) auto; align-items: center; gap: 32px; }
+.footer-brand { font: 28px "Bebas Neue", sans-serif; text-decoration: none; }
+.footer-inner p { color: var(--muted-foreground); font-size: 12px; margin: 0; }
+.footer-links { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; font-size: 13px; }
+.footer-links a { text-decoration: none; color: var(--muted-foreground); }
+.footer-links a:hover { color: var(--primary); }
+@media (max-width: 1000px) {
+  .container { width: min(100% - 3rem, 76rem); }
+  .nav { gap: 16px; }
+  .nav-links a { padding-inline: 10px; }
+  .trainer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px; }
+  .price-card { padding: 24px; }
+  .discipline { gap: 12px; padding-inline: 16px; }
+}
+@media (max-width: 760px) {
+  .nav { grid-template-columns: minmax(0,1fr) auto; min-height: 72px; }
+  .nav-links { grid-column: 1 / -1; grid-row: 2; justify-content: center; border-top: 1px solid var(--border); }
+  .nav-links a { padding-block: 10px; }
+  .nav { row-gap: 0; padding-top: 10px; }
+  .nav > md-filled-button { margin-bottom: 10px; }
+  .hero { min-height: 520px; }
+  .hero-image { object-position: 60% center; }
+  .hero::after { background: color-mix(in oklab, var(--hero-scrim) 58%, transparent); }
+  .hero h1 { font-size: 72px; }
+  .hero-tagline { font-size: 36px; }
+  .section { padding-block: 60px; }
+  .section-heading h2, .contact-inner h2 { font-size: 44px; }
+  .discipline-grid { grid-template-columns: 1fr; }
+  .discipline, .discipline:first-child, .discipline:last-child { padding: 20px 0; border-right: 0; border-bottom: 1px solid var(--border); }
+  .discipline:last-child { border-bottom: 0; }
+  .discipline strong { font-size: 26px; }
+  .schedule-grid { display: block; border-top: 0; }
+  .schedule-head { display: none; }
+  .schedule-row { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); margin-bottom: 24px; border-top: 1px solid var(--border); }
+  .schedule-grid .time { grid-column: 1/-1; min-height: 44px; background: var(--muted); }
+  .schedule-grid .cls { display: grid; grid-template-columns: 26px minmax(0,1fr); gap: 8px; padding: 12px 8px; min-height: 60px; font-size: 12px; }
+  .schedule-grid .cls::before { content: attr(data-day); position: static; width: auto; height: auto; background: none; font-size: 10px; font-weight: 600; color: var(--muted-foreground); }
+  .schedule-grid .cls::after { content: ""; position: absolute; left: 42px; bottom: 5px; width: 18px; height: 2px; }
+  .cls-strength::after { background: var(--class-strength); }
+  .cls-conditioning::after { background: var(--class-conditioning); }
+  .cls-mobility::after { background: var(--class-mobility); }
+  .pricing-grid { grid-template-columns: 1fr; gap: 28px; }
+  .price-card { padding: 32px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 420px) {
+  .container { width: calc(100% - 2rem); }
+  .logo > span:last-child { font-size: 28px; }
+  .logo { gap: 5px; }
+  .hero h1 { font-size: 64px; }
+  .hero-tagline { font-size: 34px; }
+  .hero-inner { padding-block: 48px; }
+  .hero-sub { font-size: 15px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .trainer-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

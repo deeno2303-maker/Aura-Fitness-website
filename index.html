@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Aura Fitness | Durban
+  </title>
+  <meta content="Aura Fitness — strength, conditioning and mobility classes in Westville, Durban." name="description"/>
+  <meta content="Aura Fitness | Durban" property="og:title"/>
+  <meta content="Strength, conditioning and mobility classes in Westville, Durban." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <link href="styles.css" rel="stylesheet"/>
+  <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Bebas+Neue&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0..1,0&amp;display=swap" rel="stylesheet"/>
+  <script type="importmap">
+   {"imports":{"tslib":"https://esm.sh/tslib@2.8.1","lit":"https://esm.sh/lit@3.3.2","lit/":"https://esm.sh/lit@3.3.2/","@lit/reactive-element":"https://esm.sh/@lit/reactive-element@2.1.1","@lit/reactive-element/":"https://esm.sh/@lit/reactive-element@2.1.1/"}}
+  </script>
+  <script src="https://unpkg.com/@material/web/all.js" type="module">
+  </script>
+ </head>
+ <body>
+  <div class="aura-site" data-tsd-source="/src/routes/index.tsx:28:5">
+   <a class="skip-link" href="#main">
+    Skip to main content
+   </a>
+   <header class="site-header">
+    <nav aria-label="Main navigation" class="nav container">
+     <a aria-label="Aura Fitness home" class="logo" href="#top">
+      <span aria-hidden="true" class="logo-mark">
+       A
+      </span>
+      <span>
+       AURA
+       <strong>
+        FITNESS
+       </strong>
+      </span>
+     </a>
+     <div class="nav-links">
+      <a href="#schedule">
+       Schedule
+       <md-ripple aria-hidden="true">
+       </md-ripple>
+      </a>
+      <a href="#trainers">
+       Trainers
+       <md-ripple aria-hidden="true">
+       </md-ripple>
+      </a>
+      <a href="#membership">
+       Membership
+       <md-ripple aria-hidden="true">
+       </md-ripple>
+      </a>
+     </div>
+     <md-filled-button href="#contact" value="">
+      Join now
+     </md-filled-button>
+    </nav>
+   </header>
+   <main id="main">
+    <section class="hero" id="top">
+     <img alt="An airy, modern gym with free weights and strength equipment" class="hero-image" fetchpriority="high" height="1024" src="aura-studio.jpg" width="1920"/>
+     <div class="container hero-inner">
+      <p class="eyebrow">
+       Est. 2026 · Durban
+      </p>
+      <h1>
+       Aura Fitness
+       <span class="hero-tagline">
+        Train hard.
+        <br/>
+        Recover harder.
+       </span>
+      </h1>
+      <p class="hero-sub">
+       Strength, conditioning and mobility classes led by coaches who actually teach you how to gain results. Small groups, big results, zero ego.
+      </p>
+      <div class="hero-actions">
+       <md-filled-button has-icon="" href="#membership" value="">
+        View memberships
+        <md-icon aria-hidden="true" slot="icon">
+         arrow_downward
+        </md-icon>
+       </md-filled-button>
+       <md-outlined-button href="#schedule" value="">
+        Weekly classes
+       </md-outlined-button>
+      </div>
+     </div>
+    </section>
+    <section aria-label="Training disciplines" class="disciplines">
+     <div class="container discipline-grid">
+      <a class="discipline discipline-strength" href="#schedule">
+       <md-icon aria-hidden="true">
+        fitness_center
+       </md-icon>
+       <span>
+        <small>
+         01
+         <!-- -->
+         / Training
+        </small>
+        <strong>
+         Strength
+        </strong>
+       </span>
+       <md-icon aria-hidden="true" class="discipline-arrow">
+        arrow_outward
+       </md-icon>
+       <md-ripple aria-hidden="true">
+       </md-ripple>
+      </a>
+      <a class="discipline discipline-conditioning" href="#schedule">
+       <md-icon aria-hidden="true">
+        ecg_heart
+       </md-icon>
+       <span>
+        <small>
+         02
+         <!-- -->
+         / Training
+        </small>
+        <strong>
+         Conditioning
+        </strong>
+       </span>
+       <md-icon aria-hidden="true" class="discipline-arrow">
+        arrow_outward
+       </md-icon>
+       <md-ripple aria-hidden="true">
+       </md-ripple>
+      </a>
+      <a class="discipline discipline-mobility" href="#schedule">
+       <md-icon aria-hidden="true">
+        self_improvement
+       </md-icon>
+       <span>
+        <small>
+         03
+         <!-- -->
+         / Training
+        </small>
+        <strong>
+         Mobility
+        </strong>
+       </span>
+       <md-icon aria-hidden="true" class="discipline-arrow">
+        arrow_outward
+       </md-icon>
+       <md-ripple aria-hidden="true">
+       </md-ripple>
+      </a>
+     </div>
+    </section>
+    <section aria-labelledby="schedule-heading" class="section schedule-section" id="schedule">
+     <div class="container">
+      <div class="section-heading">
+       <p class="section-kicker">
+        01 / This week
+       </p>
+       <h2 id="schedule-heading">
+        Class schedule
+       </h2>
+       <p class="section-sub">
+        All classes are 60 minutes. Book up to 7 days ahead.
+       </p>
+      </div>
+      <div aria-label="Weekly class schedule" class="schedule-grid" role="table">
+       <div class="schedule-head" role="row">
+        <span role="columnheader">
+         Time
+        </span>
+        <span role="columnheader">
+         Mon
+        </span>
+        <span role="columnheader">
+         Tue
+        </span>
+        <span role="columnheader">
+         Wed
+        </span>
+        <span role="columnheader">
+         Thu
+        </span>
+        <span role="columnheader">
+         Fri
+        </span>
+        <span role="columnheader">
+         Sat
+        </span>
+       </div>
+       <div class="schedule-row" role="row">
+        <span class="time" role="rowheader">
+         06:00
+        </span>
+        <span class="cls cls-strength" data-day="Mon" role="cell">
+         Strength
+        </span>
+        <span class="cls cls-conditioning" data-day="Tue" role="cell">
+         Conditioning
+        </span>
+        <span class="cls cls-strength" data-day="Wed" role="cell">
+         Strength
+        </span>
+        <span class="cls cls-conditioning" data-day="Thu" role="cell">
+         Conditioning
+        </span>
+        <span class="cls cls-strength" data-day="Fri" role="cell">
+         Strength
+        </span>
+        <span class="cls cls-mobility" data-day="Sat" role="cell">
+         Mobility
+        </span>
+       </div>
+       <div class="schedule-row" role="row">
+        <span class="time" role="rowheader">
+         12:15
+        </span>
+        <span class="cls cls-conditioning" data-day="Mon" role="cell">
+         Express HIIT
+        </span>
+        <span class="cls cls-strength" data-day="Tue" role="cell">
+         Strength
+        </span>
+        <span class="cls cls-conditioning" data-day="Wed" role="cell">
+         Express HIIT
+        </span>
+        <span class="cls cls-strength" data-day="Thu" role="cell">
+         Strength
+        </span>
+        <span class="cls cls-conditioning" data-day="Fri" role="cell">
+         Express HIIT
+        </span>
+        <span class="cls cls-empty" data-day="Sat" role="cell">
+         —
+        </span>
+       </div>
+       <div class="schedule-row" role="row">
+        <span class="time" role="rowheader">
+         17:30
+        </span>
+        <span class="cls cls-strength" data-day="Mon" role="cell">
+         Strength
+        </span>
+        <span class="cls cls-mobility" data-day="Tue" role="cell">
+         Mobility
+        </span>
+        <span class="cls cls-strength" data-day="Wed" role="cell">
+         Strength
+        </span>
+        <span class="cls cls-mobility" data-day="Thu" role="cell">
+         Mobility
+        </span>
+        <span class="cls cls-conditioning" data-day="Fri" role="cell">
+         Conditioning
+        </span>
+        <span class="cls cls-strength" data-day="Sat" role="cell">
+         Open gym
+        </span>
+       </div>
+       <div class="schedule-row" role="row">
+        <span class="time" role="rowheader">
+         19:00
+        </span>
+        <span class="cls cls-mobility" data-day="Mon" role="cell">
+         Mobility
+        </span>
+        <span class="cls cls-conditioning" data-day="Tue" role="cell">
+         Conditioning
+        </span>
+        <span class="cls cls-mobility" data-day="Wed" role="cell">
+         Mobility
+        </span>
+        <span class="cls cls-conditioning" data-day="Thu" role="cell">
+         Conditioning
+        </span>
+        <span class="cls cls-empty" data-day="Fri" role="cell">
+         —
+        </span>
+        <span class="cls cls-empty" data-day="Sat" role="cell">
+         —
+        </span>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section aria-labelledby="trainers-heading" class="section section-alt" id="trainers">
+     <div class="container">
+      <div class="section-heading">
+       <p class="section-kicker">
+        02 / Technique first
+       </p>
+       <h2 id="trainers-heading">
+        Meet the trainers
+       </h2>
+       <p class="section-sub">
+        Four coaches, one standard: Technique First.
+       </p>
+      </div>
+      <div class="trainer-grid">
+       <article class="trainer-card trainer-strength">
+        <div aria-hidden="true" class="avatar">
+         LN
+        </div>
+        <div class="trainer-copy">
+         <h3>
+          Logan Nair
+         </h3>
+         <p class="role">
+          Head coach · Strength
+         </p>
+         <p>
+          12 years under the bar. Logan runs the strength program and insists on perfect hinges before heavy deadlifts.
+         </p>
+        </div>
+       </article>
+       <article class="trainer-card trainer-conditioning">
+        <div aria-hidden="true" class="avatar">
+         MW
+        </div>
+        <div class="trainer-copy">
+         <h3>
+          Mubeen Wahab
+         </h3>
+         <p class="role">
+          Conditioning
+         </p>
+         <p>
+          Former 800m national squad. Mubeen's HIIT blocks are short, brutal, and weirdly fun.
+         </p>
+        </div>
+       </article>
+       <article class="trainer-card trainer-mobility">
+        <div aria-hidden="true" class="avatar">
+         NW
+        </div>
+        <div class="trainer-copy">
+         <h3>
+          Nabiha Wahab
+         </h3>
+         <p class="role">
+          Mobility · Rehab
+         </p>
+         <p>
+          Physio-turned-coach. Nabiha keeps the whole studio moving well and coming back from injuries stronger.
+         </p>
+        </div>
+       </article>
+       <article class="trainer-card trainer-strength">
+        <div aria-hidden="true" class="avatar">
+         ME
+        </div>
+        <div class="trainer-copy">
+         <h3>
+          Muzzammil Essop
+         </h3>
+         <p class="role">
+          Strength · Beginners
+         </p>
+         <p>
+          Muzzammil onboards every new member. Patient, precise, and allergic to bad squat depth.
+         </p>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section aria-labelledby="membership-heading" class="section" id="membership">
+     <div class="container">
+      <div class="section-heading">
+       <p class="section-kicker">
+        03 / Your way in
+       </p>
+       <h2 id="membership-heading">
+        Membership tiers
+       </h2>
+       <p class="section-sub">
+        No contracts. Cancel anytime given it is 1 month in advance.
+       </p>
+      </div>
+      <div class="pricing-grid">
+       <article class="price-card">
+        <h3>
+         Off-peak
+        </h3>
+        <p class="price">
+         R650
+         <span>
+          /mo
+         </span>
+        </p>
+        <ul>
+         <li>
+          <md-icon aria-hidden="true">
+           check
+          </md-icon>
+          Classes before 16:00
+         </li>
+         <li>
+          <md-icon aria-hidden="true">
+           check
+          </md-icon>
+          Open gym Saturdays
+         </li>
+         <li>
+          <md-icon aria-hidden="true">
+           check
+          </md-icon>
+          1 guest pass per month
+         </li>
+        </ul>
+        <md-outlined-button href="#contact" value="">
+         Choose off-peak
+        </md-outlined-button>
+       </article>
+       <article class="price-card price-card-featured">
+        <p class="badge">
+         Most popular
+        </p>
+        <h3>
+         All access
+        </h3>
+        <p class="price">
+         R890
+         <span>
+          /mo
+         </span>
+        </p>
+        <ul>
+         <li>
+          <md-icon aria-hidden="true">
+           check
+          </md-icon>
+          Unlimited classes, any time
+         </li>
+         <li>
+          <md-icon aria-hidden="true">
+           check
+          </md-icon>
+          Open gym 7 days a week
+         </li>
+         <li>
+          <md-icon aria-hidden="true">
+           check
+          </md-icon>
+          Monthly movement screen
+         </li>
+         <li>
+          <md-icon aria-hidden="true">
+           check
+          </md-icon>
+          2 guest passes per month
+         </li>
+        </ul>
+        <md-filled-button href="#contact" value="">
+         Choose all access
+        </md-filled-button>
+       </article>
+       <article class="price-card">
+        <h3>
+         Coached+
+        </h3>
+        <p class="price">
+         R1 450
+         <span>
+          /mo
+         </span>
+        </p>
+        <ul>
+         <li>
+          <md-icon aria-hidden="true">
+           check
+          </md-icon>
+          Everything in All access
+         </li>
+         <li>
+          <md-icon aria-hidden="true">
+           check
+          </md-icon>
+          1-on-1 session every month
+         </li>
+         <li>
+          <md-icon aria-hidden="true">
+           check
+          </md-icon>
+          Personalised program
+         </li>
+        </ul>
+        <md-outlined-button href="#contact" value="">
+         Choose coached+
+        </md-outlined-button>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section aria-labelledby="contact-heading" class="section contact-section" id="contact">
+     <div class="container contact-inner">
+      <div aria-hidden="true" class="contact-icon">
+       <md-icon aria-hidden="true">
+        fitness_center
+       </md-icon>
+      </div>
+      <h2 id="contact-heading">
+       Come try a class
+      </h2>
+      <p>
+       First week is free.
+      </p>
+      <p>
+       Located:
+       <!-- -->
+       <a href="https://maps.google.com/?q=34+Essex+Terrace,+Westville,+Durban" rel="noopener noreferrer" target="_blank">
+        34 Essex Terrace, Westville, Durban
+       </a>
+      </p>
+      <md-filled-button has-icon="" href="mailto:slowmoe.7860@gmail.com?subject=Free%20Week%20Trial%20Booking" value="">
+       Book your free week
+       <md-icon aria-hidden="true" slot="icon">
+        mail
+       </md-icon>
+      </md-filled-button>
+     </div>
+    </section>
+   </main>
+   <footer class="site-footer">
+    <div class="container footer-inner">
+     <a class="footer-brand" href="#top">
+      AURA FITNESS
+     </a>
+     <p>
+      © 2026 Aura Fitness
+     </p>
+     <ul class="footer-links">
+      <li>
+       <a href="#schedule">
+        Schedule
+       </a>
+      </li>
+      <li>
+       <a href="#trainers">
+        Trainers
+       </a>
+      </li>
+      <li>
+       <a href="#membership">
+        Membership
+       </a>
+      </li>
+     </ul>
+    </div>
+   </footer>
+  </div>
+ </body>
+</html>
