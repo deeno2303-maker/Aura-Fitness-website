@@ -1,3 +1,5 @@
+import studioImage from '../../aura-studio.jpg';
+
 export default function Hero() {
   return (
     <section className="hero" id="top">
@@ -5,7 +7,7 @@ export default function Hero() {
         alt="An airy, modern gym with free weights and strength equipment"
         className="hero-image"
         height="1024"
-        src="/aura-studio.jpg"
+        src={studioImage}
         width="1920"
       />
 

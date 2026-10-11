@@ -11,21 +11,20 @@ import Footer from './components/Footer';
 import Dashboard from './components/Dashboard';
 import { apiRequest } from './lib/api';
 
-async function fetchSiteContent() {
-  return apiRequest('/api/content');
-}
+const isStaticSite = import.meta.env.MODE === 'static';
 
 export default function App() {
   const [content, setContent] = useState(defaultSiteContent);
   const [contentError, setContentError] = useState('');
 
   useEffect(() => {
+    if (isStaticSite) return;
     fetchSiteContent()
       .then(setContent)
       .catch((error) => setContentError(error.message));
   }, []);
 
-  if (window.location.pathname.startsWith('/dashboard')) {
+  if (!isStaticSite && window.location.pathname.startsWith('/dashboard')) {
     return <Dashboard />;
   }
 
@@ -35,14 +34,23 @@ export default function App() {
       <Header />
       <main id="main">
         <Hero />
+        {isStaticSite ? (
+          <p className="api-notice" role="status">
+            Beta preview: trial requests open your email app. Requests are not saved and a place is not reserved until the studio confirms it.
+          </p>
+        ) : null}
         {contentError ? <p className="api-notice" role="status">{contentError} Showing the published copy instead.</p> : null}
         <Disciplines disciplines={content.disciplines} />
         <Schedule content={content} />
         <Trainers trainers={content.trainerProfiles} />
         <Pricing plans={content.membershipPlans} />
-        <ContactForm scheduleRows={content.scheduleRows} />
+        <ContactForm isStaticSite={isStaticSite} scheduleRows={content.scheduleRows} />
       </main>
-      <Footer />
+      <Footer isStaticSite={isStaticSite} />
     </div>
   );
+}
+
+async function fetchSiteContent() {
+  return apiRequest('/api/content');
 }

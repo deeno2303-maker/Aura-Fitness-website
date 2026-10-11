@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer({ isStaticSite = false }) {
   return (
     <footer className="site-footer">
       <div className="container footer-inner">
@@ -16,9 +16,11 @@ export default function Footer() {
           <li>
             <a href="#membership">Membership</a>
           </li>
-          <li>
-            <a href="/dashboard">Member login</a>
-          </li>
+          {!isStaticSite ? (
+            <li>
+              <a href="/dashboard">Member login</a>
+            </li>
+          ) : null}
         </ul>
       </div>
     </footer>

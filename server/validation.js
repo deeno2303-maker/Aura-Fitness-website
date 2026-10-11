@@ -1,4 +1,5 @@
 import { dayOrder } from '../src/data/siteData.js';
+import { getScheduledSlots, studioDateTime } from '../src/lib/availability.js';
 
 export function validEmail(value) {
   return typeof value === 'string' && value.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -14,23 +15,6 @@ function validLabel(value, maxLength) {
     !/[\u0000-\u001f\u007f]/.test(value);
 }
 
-function studioDateTime(now) {
-  const parts = new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'Africa/Johannesburg',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    hourCycle: 'h23'
-  }).formatToParts(now);
-  const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
-  return {
-    date: `${values.year}-${values.month}-${values.day}`,
-    time: `${values.hour}:${values.minute}`
-  };
-}
-
 export function validBookingDate(value) {
   if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
   const parsed = new Date(`${value}T00:00:00Z`);
@@ -43,15 +27,7 @@ export function validBookingDate(value) {
 }
 
 export function getAvailableSlots(content, date, classType, now = new Date()) {
-  const dayIndex = new Date(`${date}T12:00:00Z`).getUTCDay();
-  const day = dayIndex === 0 ? null : dayOrder[dayIndex - 1];
-  if (!day) return [];
-
-  const current = studioDateTime(now);
-  return content.scheduleRows
-    .filter((row) => row[day] === classType)
-    .map((row) => row.time)
-    .filter((time) => date !== current.date || time > current.time);
+  return getScheduledSlots(content.scheduleRows, date, classType, now);
 }
 
 export function validSiteContent(content) {

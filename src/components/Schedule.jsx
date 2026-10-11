@@ -21,7 +21,7 @@ export default function Schedule({ content }) {
         <div className="section-heading">
           <p className="section-kicker">01 / This week</p>
           <h2 id="schedule-heading">Class schedule</h2>
-          <p className="section-sub">All classes are 60 minutes. Book up to 60 days ahead; each class has up to 50 spaces.</p>
+          <p className="section-sub">All classes are 60 minutes. Classes hold up to 50 people; trial requests need studio confirmation.</p>
         </div>
 
         <div aria-label="Weekly class schedule" className="schedule-grid" role="table">

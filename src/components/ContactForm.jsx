@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { apiRequest, readApiResponse } from '../lib/api';
+import { getScheduledSlots } from '../lib/availability';
 
 function localDateValue(date) {
   const offset = date.getTimezoneOffset() * 60_000;
   return new Date(date.getTime() - offset).toISOString().slice(0, 10);
 }
 
-export default function ContactForm({ scheduleRows }) {
+export default function ContactForm({ scheduleRows, isStaticSite = false }) {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -36,6 +37,14 @@ export default function ContactForm({ scheduleRows }) {
 
     const controller = new AbortController();
     setSlots([]);
+    if (isStaticSite) {
+      const scheduledSlots = getScheduledSlots(scheduleRows, formData.date, formData.classType);
+      setSlots(scheduledSlots);
+      setAvailabilityStatus('loaded');
+      setFormData((current) => ({ ...current, time: scheduledSlots.includes(current.time) ? current.time : '' }));
+      return undefined;
+    }
+
     setAvailabilityStatus('loading');
     fetch(`/api/availability?date=${encodeURIComponent(formData.date)}&classType=${encodeURIComponent(formData.classType)}`, {
       signal: controller.signal
@@ -54,7 +63,7 @@ export default function ContactForm({ scheduleRows }) {
       });
 
     return () => controller.abort();
-  }, [formData.date, formData.classType]);
+  }, [formData.date, formData.classType, isStaticSite, scheduleRows]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -68,6 +77,27 @@ export default function ContactForm({ scheduleRows }) {
     setStatus({ type: '', message: '' });
 
     try {
+      if (isStaticSite) {
+        const subject = `Aura Fitness trial request: ${formData.classType}`;
+        const body = [
+          `Name: ${formData.fullName}`,
+          `Email: ${formData.email}`,
+          `Class: ${formData.classType}`,
+          `Preferred date: ${formData.date}`,
+          `Preferred time: ${formData.time}`,
+          `Goal: ${formData.goal}`,
+          `Message: ${formData.message || 'None'}`,
+          '',
+          'This is a request only; my place is not reserved until Aura Fitness confirms it.'
+        ].join('\n');
+        window.location.href = `mailto:info.aurafitness23@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        setStatus({
+          type: 'success',
+          message: 'Your email app should open with the request. The class is not booked until the studio confirms your place.'
+        });
+        return;
+      }
+
       const payload = await apiRequest('/api/trial-requests', {
         method: 'POST',
         body: JSON.stringify(formData)
@@ -109,9 +139,11 @@ export default function ContactForm({ scheduleRows }) {
               </a>
             </p>
             <p className="contact-email">Email us: info.aurafitness23@gmail.com</p>
-            <p>
-              Already a member? <a href="/dashboard">Sign in to book classes</a>
-            </p>
+            {isStaticSite ? null : (
+              <p>
+                Already a member? <a href="/dashboard">Sign in to book classes</a>
+              </p>
+            )}
           </div>
 
           <form className="contact-form" onSubmit={handleSubmit}>
@@ -180,7 +212,7 @@ export default function ContactForm({ scheduleRows }) {
             </label>
 
             <button className="form-submit-button" disabled={submitting} type="submit">
-              {submitting ? 'Sending request…' : 'Book your free week'}
+            {submitting ? 'Preparing request…' : isStaticSite ? 'Request a trial by email' : 'Book your free week'}
             </button>
 
             {status.message ? (

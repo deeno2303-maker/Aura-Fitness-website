@@ -39,3 +39,9 @@ Configure `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASSWORD`,
 - Admin only: `PUT /api/admin/content`
 
 Authentication uses an HTTP-only, SameSite=Lax session cookie. Passwords are bcrypt-hashed; do not store `.env` in source control.
+
+## Static beta preview on GitHub Pages
+
+The `static-website-for-beta-testing` branch includes a static-only build for GitHub Pages. It uses the bundled schedule to show scheduled class times and opens the visitor's email app to prepare a trial request. Static hosting cannot save bookings, enforce the 50-person capacity across visitors, send email itself, or provide member/admin accounts. A request is not a confirmed booking until the studio responds.
+
+The GitHub Actions workflow builds and deploys this branch to GitHub Pages. In the repository settings, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. Push the branch to GitHub and check its **Actions** tab for a successful Pages deployment.

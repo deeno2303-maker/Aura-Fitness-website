@@ -12,6 +12,7 @@
     "db:init": "node server/init-db.js",
     "admin:create": "node server/create-admin.js",
     "build": "vite build",
+    "build:static": "vite build --mode static",
     "preview": "vite preview",
     "test": "node --test",
     "start": "node server/index.js"
