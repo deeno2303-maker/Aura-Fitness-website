@@ -241,3 +241,370 @@ md-outlined-button:not(:defined) { border: 1px solid var(--md-sys-color-outline)
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.contact-copy {
+  display: grid;
+  gap: 1rem;
+  text-align: left;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: color-mix(in oklab, var(--card) 88%, var(--secondary));
+}
+
+.contact-copy p {
+  margin: 0;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
+
+.contact-copy a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.contact-email {
+  color: var(--foreground) !important;
+  font-weight: 600;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.2rem;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--card);
+  box-shadow: var(--md-sys-elevation-level1);
+  text-align: left;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--foreground);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+  color: var(--foreground);
+  padding: 0.85rem 0.9rem;
+  font: 500 0.96rem "Barlow", sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 20%, transparent);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-submit-button {
+  justify-self: flex-start;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font: 600 15px "Barlow", sans-serif;
+  min-height: 48px;
+  padding: 0.8rem 1.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.form-submit-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+.form-message {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.form-message.success {
+  background: color-mix(in oklab, var(--accent) 18%, transparent);
+  color: color-mix(in oklab, var(--foreground) 86%, var(--class-mobility));
+}
+
+.form-message.error {
+  background: color-mix(in oklab, var(--destructive) 12%, transparent);
+  color: var(--destructive);
+}
+
+.api-notice {
+  margin: 0;
+  padding: 0.75rem 1.5rem;
+  background: color-mix(in oklab, var(--destructive) 12%, var(--background));
+  color: var(--destructive);
+  text-align: center;
+  font-weight: 600;
+}
+
+.dashboard-page {
+  min-height: 100vh;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: var(--muted);
+}
+
+.dashboard-shell {
+  width: min(100%, 70rem);
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.auth-card {
+  width: min(100%, 32rem);
+  margin: clamp(2rem, 8vh, 6rem) auto;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--card);
+  box-shadow: var(--md-sys-elevation-level2);
+}
+
+.dashboard-shell h1 {
+  margin: 0.75rem 0;
+  font: 48px/1 "Bebas Neue", sans-serif;
+}
+
+.dashboard-shell h2 {
+  margin-bottom: 1rem;
+  font: 32px/1 "Bebas Neue", sans-serif;
+}
+
+.dashboard-loading {
+  max-width: 70rem;
+  margin: 4rem auto;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-header h1 {
+  margin-top: 1rem;
+}
+
+.dashboard-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.dashboard-form label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--foreground);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.dashboard-form input,
+.dashboard-form select,
+.dashboard-form textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--background);
+  color: var(--foreground);
+  padding: 0.75rem 0.85rem;
+  font: 500 0.96rem "Barlow", sans-serif;
+}
+
+.dashboard-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.dashboard-form input:focus,
+.dashboard-form select:focus,
+.dashboard-form textarea:focus {
+  outline: 3px solid color-mix(in oklab, var(--primary) 30%, transparent);
+  border-color: var(--primary);
+}
+
+.dashboard-form small {
+  color: var(--muted-foreground);
+  font-weight: 400;
+}
+
+.dashboard-panel {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--card);
+  box-shadow: var(--md-sys-elevation-level1);
+}
+
+.booking-form {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+}
+
+.booking-form .form-submit-button {
+  grid-column: 1 / -1;
+}
+
+.booking-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.booking-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+}
+
+.booking-item h3 {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.booking-item p {
+  margin: 0.25rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.booking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.booking-status {
+  display: inline-flex;
+  padding: 0.25rem 0.65rem;
+  border-radius: 99px;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-confirmed {
+  color: var(--class-mobility);
+}
+
+.status-cancelled {
+  color: var(--destructive);
+}
+
+.secondary-action,
+.text-action {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  background: var(--card);
+  color: var(--primary);
+  font: 600 0.9rem "Barlow", sans-serif;
+  cursor: pointer;
+}
+
+.text-action {
+  border-color: transparent;
+  background: transparent;
+  text-align: left;
+}
+
+.back-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-card > .back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+.cms-form textarea {
+  min-height: 32rem;
+  font: 0.85rem/1.5 Consolas, monospace;
+}
+
+@media (max-width: 760px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-copy,
+  .contact-form {
+    padding: 1.25rem;
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-form .form-submit-button {
+    grid-column: auto;
+  }
+
+  .dashboard-header,
+  .booking-item {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .booking-actions {
+    justify-content: flex-start;
+  }
+
+  .cms-form textarea {
+    min-height: 24rem;
+  }
+}

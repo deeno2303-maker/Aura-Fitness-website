@@ -1,0 +1,37 @@
+{
+  "name": "aura-fitness-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "api": "node server/index.js",
+    "db:init": "node server/init-db.js",
+    "admin:create": "node server/create-admin.js",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "@material/web": "^2.5.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^10.1.0",
+    "pg": "^8.13.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.3.4"
+  }
+}
